@@ -1,56 +1,36 @@
 const fs = require('fs');
-var importedUsers = require('../mock-data/user');
-var users = JSON.parse(importedUsers.users);
+var importedCredentials = require('../mock-data/credential');
+var credentials = JSON.parse(importedCredentials.credentials);
 
-class UserService {
-    findAllUsers() {
-        return users;
+class CredentialService {
+    addCredential(data) {
+        credentials.push(data);
+        return credentials;
     };
 
-    findUserById(id) {
-        const user = users.find(function(user){
-            return user.id === id;
-        });
-        return user;
-    };
-
-    updateUser(id,data){
-        users.forEach(element => {
-            if(element.id === id) {
-                element.id = data.id;
-                element.first_name = data.first_name;
-                element.last_name = data.last_name;
-                element.email = data.email;
-                element.gender = data.gender;
-                element.ip_address = data.ip_address;
+    findUserByCred(credData) {
+        var checkResult = {"checkFlag": false};
+        credentials.forEach(element => {
+            if(element.username === credData.username && element.password === credData.password){
+                checkResult = {
+                    "checkFlag": true,
+                    "username": element.username,
+                    "full_name": element.full_name,
+                    "email": element.email,
+                    "ph_no": element.ph_no
+                }
             }
         });
-        return users;
-    }
-
-    addUser(data) {
-        users.push(data);
-        return users;
+        return checkResult;
     };
 
-    deleteUser(id) {
-        var user = [];
-        users.forEach(element => {
-            if(element.id !== id){
-                user.push(element);
-            }
-        });
-        users = user;
-        return users;
+    writeLoaclCredFile(credentials) {
+        const streamFilePathCred = '../node-web-service-02/mock-data/pwdData.json';
+        const writeStreamCred = fs.createWriteStream(streamFilePathCred);
+        const streamDataCred = JSON.stringify(credentials);
+        writeStreamCred.write(streamDataCred, 'UTF8');
+        writeStreamCred.end();
     };
+}
 
-    writeLoaclFile(users) {
-        const streamFilePath = '../node-web-service-02/mock-data/usersData.json';
-        const writeStream = fs.createWriteStream(streamFilePath);
-        const streamData = JSON.stringify(users);
-        writeStream.write(streamData, 'UTF8');
-        writeStream.end();
-    }
-};
-
-module.exports = UserService;
+module.exports = CredentialService;
