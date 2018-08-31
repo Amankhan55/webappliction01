@@ -108,7 +108,6 @@ app.get('/api/users/:id', (req,res) => {
         res.status(404).json({error: 'Bad Request!'});
     }
     const user = curd.findUserById(id);
-    console.log(user);
     user ? res.status(200).json(user) : res.status(404).json({error: 'user not found'});
 });
 
@@ -150,7 +149,6 @@ app.post('/api/credential', (req,res) => {
 app.post('/api/credentialCheck', (req,res) => {
     const credData = req.body;
     const credCheck = credOperation.findUserByCred(credData);
-    console.log(credCheck);
     credCheck ? res.status(200).json(credCheck) : res.status(404).json(credCheck);
 });
 
