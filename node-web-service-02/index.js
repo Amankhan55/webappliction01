@@ -2,8 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const UserRouter = require('./routers/UserRouters');
-const CredentialRouter = require('./routers/CredentialRouters')
-const fs = require('fs');
+const CredentialRouter = require('./routers/CredentialRouters');
 const port = require('./setting');
 const app = express();
 

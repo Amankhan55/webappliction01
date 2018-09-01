@@ -1,0 +1,29 @@
+.bg{background:url(../images/background.jpg) no-repeat;
+    width: 100%;
+}
+#log{
+    border: 2px solid white;
+    padding: 60px 40px;
+    margin-top: 40px;
+    -webkit-box-shadow: -5px 2px 19px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 2px 19px 10px rgba(0,0,0,0.75);
+    box-shadow: -5px 2px 19px 10px rgba(0,0,0,0.75);
+    /* -webkit-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.75);
+    box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.75); */
+}
+.login-img{
+    width: 120px;
+}
+#log h1{
+    color: white;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: -20px;
+}
+#log label{font-size: 20px; color: white;}
+#log button{
+    -webkit-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.75);
+    box-shadow: -5px 2px 62px 8px rgba(0,0,0,0.75);
+}

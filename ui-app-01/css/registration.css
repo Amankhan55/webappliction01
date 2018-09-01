@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.reg-body{
+    background-image: url(../images/background2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Times New Roman', Times, serif;
+}
+.h1-class{
+    font-size: 40px;
+    margin-top: 40px;
+    background: white;
+    width: 65px;
+    border-radius: 100px;
+    padding: 10px;
+}
+.h2-class{
+    font-size: 40px;
+    color: white;
+}
+.p-class{
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.h3-class{
+    font-size: 30px;
+    color: white;
+}
+.form-control-custom{
+    margin-top: 20px;
+    border-radius: 0px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+}
+.btn-success-custom{
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 300px;
+    border-radius: 0px;
+}
+input[type="checkbox"]{
+    margin-top: 10px;
+}
+small{
+    font-size: 18px;
+    color: white;
+}
+.col-md-12{
+    background: rgba(0, 0, 0, 0.5);
+    height: 450px;
+    border-right: 2px solid lightgreen;
+}
